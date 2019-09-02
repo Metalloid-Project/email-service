@@ -37,7 +37,7 @@ public class EmailService {
         this.session = Session.getDefaultInstance(props);
     }
 
-    protected Inbox getInbox() throws MessagingException {
+    public Inbox getInbox() throws MessagingException {
         Store store = session.getStore();
         if (port == -1) {
             store.connect(host, username, password);
