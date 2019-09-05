@@ -1,7 +1,6 @@
 package com.github.metalloid.email;
 
 import javax.mail.Address;
-import javax.mail.Flags;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import java.io.IOException;
@@ -27,5 +26,13 @@ public class Email {
 
     public boolean equals(Message message) {
         return this.message.equals(message);
+    }
+
+    public Address[] getAllRecipients() throws MessagingException{
+        return this.message.getAllRecipients();
+    }
+
+    public Address[] getRecipients(Message.RecipientType type) throws MessagingException{
+        return this.message.getRecipients(type);
     }
 }
